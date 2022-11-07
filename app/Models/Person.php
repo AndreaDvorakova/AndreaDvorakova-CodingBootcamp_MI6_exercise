@@ -9,9 +9,10 @@ class Person extends Model
 {
     use HasFactory;
 
-    public function aliases() {
+    public function aliases()
+    {
         return $this->hasMany(Aliases::class);
-     }
+    }
 
     public function image()
     {
