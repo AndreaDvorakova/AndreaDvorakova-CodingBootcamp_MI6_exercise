@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Api\ApiController;
+use App\Http\Controllers\Api\StatusController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +19,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/people', [ApiController::class, 'showAll']);
+
+Route::get('/people/{id}', [ApiController::class, 'showOne']);
+
+Route::get('/statuses', [StatusController::class, 'index']);
